@@ -1,0 +1,361 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #020617);
+    color: #e2e8f0;
+    height: 100vh;
+}
+
+/* MAIN LAYOUT */
+.container {
+    display: flex;
+    height: 100vh;
+    gap: 20px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* PANELS */
+.panel {
+    border-radius: 16px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+}
+
+/* LEFT */
+.left {
+    width: 25%;
+}
+
+.left textarea {
+    width: 100%;
+    height: 120px;
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    resize: none;
+    background: rgba(255,255,255,0.06);
+    color: #fff;
+    font-size: 14px;
+}
+
+.left textarea::placeholder {
+    color: #94a3b8;
+}
+
+.left button {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #38bdf8, #6366f1);
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.left button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(99,102,241,0.4);
+}
+
+/* CENTER */
+.center {
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.center h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* SCORE */
+.score-wrapper {
+    margin-bottom: 25px;
+}
+
+.score-circle {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    font-size: 28px;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #8e2de2);
+
+    box-shadow: 
+               0 0 20px rgba(142, 45, 226, 0.35),
+               0 0 40px rgba(48, 43, 99, 0.25);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(12px);
+    
+    transition: all 0.3s ease;
+}
+
+.progress-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg);
+}
+.bg {
+    fill: none;
+    stroke: rgba(255,255,255,0.1);
+    stroke-width: 10;
+}
+.score-text {
+    position: absolute;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 90%;
+    height: 90%;
+
+    z-index: 2;
+}
+.score-circle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(56, 189, 248, 0.6);
+}
+
+.score-text {
+    position: absolute;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#scoreText {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.score-text small {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+/* PROGRESS BAR */
+.progress {
+    fill: none;
+    stroke: #6366f1;
+    stroke-width: 10;
+
+    stroke-linecap: round;
+
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+
+    transition: stroke-dashoffset 0.8s ease;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #38bdf8, #6366f1);
+    box-shadow:
+        0 0 10px rgba(109, 40, 217, 0.5),
+        0 0 20px rgba(37, 99, 235, 0.3);
+    transition: width 0.6s ease;
+}
+
+/* RESULTS */
+.results {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+.result-block {
+    width: 45%;
+}
+
+.result-block h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #cbd5f5;
+}
+
+.skills-box {
+    background: rgba(255,255,255,0.05);
+    padding: 10px;
+    border-radius: 10px;
+    min-height: 100px;
+}
+
+/* SKILL TAGS */
+.tag {
+    display: inline-block;
+    background: rgba(99,102,241,0.2);
+    padding: 6px 10px;
+    border-radius: 8px;
+    margin: 4px;
+    font-size: 12px;
+    transition: 0.2s;
+}
+
+.tag:hover {
+    background: rgba(99,102,241,0.4);
+}
+
+/* RIGHT PANEL */
+.right {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow: hidden;
+}
+
+/* CARDS */
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.08);
+    width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* TIPS */
+.tips-box {
+    margin-top: 10px;
+}
+
+.tips-box h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.tips-box ul {
+    list-style: none;
+}
+
+.tips-box li {
+    background: rgba(56,189,248,0.1);
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    font-size: 13px;
+}
+
+/* SCROLL FIX */
+textarea::-webkit-scrollbar {
+    width: 5px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background: #6366f1;
+    border-radius: 10px;
+}
+
+
+#confidenceText {
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.badge {
+    transition: transform 0.2s ease;
+    display: inline-block;
+    padding: 6px 10px;
+    margin: 4px;
+    border-radius: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+}
+
+.badge:hover {
+    transform: scale(1.1);
+}
+
+#decision, #seniority, #reason {
+    font-size: 14px;
+    color: #ffffff;
+    padding: 8px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    margin-top: 5px;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.panel.right {
+    height: 100vh;
+    overflow-y: auto;
+    padding-right: 8px; 
+    scroll-behavior: smooth;
+}
+
+.panel {
+    min-height: 0;
+}
+
+/* ===== Premium Scrollbar ===== */
+.panel.right::-webkit-scrollbar {
+    width: 8px;
+}
+
+.panel.right::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.panel.right::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #00c6ff, #0072ff);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.panel.right::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #00ffcc, #0066ff);
+}
+
+.panel.right::-webkit-scrollbar {
+    width: 6px;
+}
+
+.panel.right::-webkit-scrollbar-thumb {
+    background: rgba(0, 200, 255, 0.6);
+    border-radius: 10px;
+}
