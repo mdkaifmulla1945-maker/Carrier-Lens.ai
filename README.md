@@ -5,7 +5,9 @@ CarrierLens.ai is an AI-powered resume analysis and job matching system designed
 The system provides a complete analysis including match percentage, skill gaps, hiring decision prediction, seniority estimation, confidence scoring, and human-readable explanations. It is built using Flask for backend processing and a modern web interface for user interaction.
 
 ## 🔴 Live Demo
-👉 [Click here to use CarrierLens.ai](https://huggingface.co/spaces/Kaif3118/carrierlens-ai)
+<a href="https://huggingface.co/spaces/Kaif3118/carrierlens-ai" target="_blank">
+  🚀 Try CarrierLens.ai
+</a>
 
 ## 🧠 Features
 - Resume vs Job Description Matching
