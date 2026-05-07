@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CareerLens AI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LEFT PANEL -->
+    <div class="panel left">
+
+        <div class="panel-header">
+            <h2>Resume Analyzer</h2>
+            <p>Input your profile & target role</p>
+        </div>
+
+        <div class="input-group">
+            <label>Your Skills</label>
+            <textarea id="skills" placeholder="Python, Machine Learning, SQL..."></textarea>
+        </div>
+
+        <div class="input-group">
+            <label>Job Description</label>
+            <textarea id="job" placeholder="Paste job description here..."></textarea>
+        </div>
+
+        <button id="analyzeBtn" onclick="analyze()">
+            🚀 Analyze AI Match
+        </button>
+
+    </div>
+
+
+    <!-- CENTER PANEL -->
+    <div class="panel center">
+
+        <div class="title-section">
+            <h1>CareerLens AI</h1>
+            <p>Smart Resume Intelligence System</p>
+        </div>
+
+        <!-- SCORE -->
+        <div class="score-wrapper">
+
+            <div class="score-circle" id="scoreCircle">
+                <svg class="progress-ring" width="160" height="160">
+                    <circle class="bg" cx="80" cy="80" r="70"></circle>
+                     <circle class="progress" id="progressRing" cx="80" cy="80" r="70"></circle>
+                </svg>
+
+                <div class="score-text">
+                    <span id="scoreText">0%</span>
+                    <small>Match Score</small>
+                </div>
+            </div>
+            
+
+            <div class="progress">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+
+            <div class="score-label">
+                Match Score
+            </div>
+
+        </div>
+
+
+        <!-- RESULTS -->
+        <div class="results">
+
+            <div class="result-block">
+                <h3>✅ Matched Skills</h3>
+                <div id="matchedSkills" class="skills-box"></div>
+            </div>
+
+            <div class="result-block">
+                <h3>⚠ Missing Skills</h3>
+                <div id="missingSkills" class="skills-box"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RIGHT PANEL -->
+    <div class="panel right">
+
+        <h2>AI Insights</h2>
+
+        <div class="card">
+            <h4>Skill Gap Analysis</h4>
+            <p id="skillGapText">Waiting for analysis...</p>
+        </div>
+
+        <div class="card">
+            <h4>Career Strength</h4>
+            <p id="strengthText">Waiting for analysis...</p>
+        </div>
+
+        <div class="card">
+            <h4>AI Confidence</h4>
+            <p id="confidenceText">Waiting for analysis...</p>
+        </div>
+        <div class="card">
+            <h4>AI Decision</h4>
+            <p id="decision">Waiting for analysis...</p>
+        </div>
+
+        <div class="card">
+            <h4>Seniority Level</h4>
+            <p id="seniority">Waiting for analysis...</p>
+        </div>
+
+        <div class="card">
+            <h4>Reason</h4>
+            <p id="reason">Waiting for analysis...</p>
+        </div>
+        
+        <!-- Recommendations -->
+        <div class="tips-box">
+            <h3>AI Recommendations</h3>
+            <ul id="tips">
+                <li>Start analysis to get insights</li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
